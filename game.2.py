@@ -29,6 +29,7 @@ def main():
     client = MongoClient()
     python_game = client.python_game
     games = python_game.games
+
     while True:
         try:
             turns = int(input("\nBest of (3 or 5) games: "))
@@ -78,7 +79,7 @@ def main():
             break
     print("\n>>> You scored: {0} point(s) CPU scored: {1} point(s) <<<".format(player1_wins,computer_wins))
 
-def save_game(player1_score,computer_score,games):
+def save_game_to_db(player1_score,computer_score,games):
         game_dict = {
 
         "winner" :  "player" if player1_score > computer_score else "computer",
@@ -89,6 +90,6 @@ def save_game(player1_score,computer_score,games):
         games.insert_one(game_dict)
         for game_dict in games:
             print(game_dict)
-        
+
 if __name__=='__main__':
     main() 
