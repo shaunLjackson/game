@@ -24,11 +24,22 @@ def player_choice():
         except ValueError:
             print("Oh No! invalid choice! Please choose rock, paper, or scissors")
 
-
-def main():
+def save_game_to_db(player1_score,computer_score):
     client = MongoClient()
     python_game = client.python_game
     games = python_game.games
+
+    game_dict = {
+
+    "winner" :  "player" if player1_score > computer_score else "computer",
+    "player1_score" : player1_score,
+    "computer_score" : computer_score
+
+    }
+    games.insert_one(game_dict)
+
+def main():
+    
 
     while True:
         try:
@@ -39,7 +50,7 @@ def main():
             
         except ValueError:
             print("Invalid choice.")
-    necessary_wins = int(math.ceil(turns/2) + 1)
+    necessary_wins = int(math.ceil(turns/2))
     player1_wins = 0
     computer_wins =0
 
@@ -77,19 +88,15 @@ def main():
         elif computer_wins == necessary_wins:
             print("\n>>>> Computer wins!! <<<")
             break
+
+    save_game_to_db(player1_wins, computer_wins)
     print("\n>>> You scored: {0} point(s) CPU scored: {1} point(s) <<<".format(player1_wins,computer_wins))
 
-def save_game_to_db(player1_score,computer_score,games):
-        game_dict = {
 
-        "winner" :  "player" if player1_score > computer_score else "computer",
-        "player1_score" : player1_score,
-        "computer_score" : computer_score
+    
+   
 
-    }
-        games.insert_one(game_dict)
-        for game_dict in games:
-            print(game_dict)
 
 if __name__=='__main__':
     main() 
+
