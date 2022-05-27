@@ -9,7 +9,7 @@ User can choose to play again or quit
 Once user chooses quit the collection is deleted.
 
 
-Tech Stack
+# Tech Stack
 Python3 
 pymongo, random, mongo client
 
@@ -17,6 +17,33 @@ MongoDB
 Windows Powershell
 VS Code
 Git/GitHub
+
+# Features
+	
+
+- Best of 3 or 5 games 	
+- Calculates winner by adding score of games won
+- Raise an error if user doesn't input rock, paper, or scissors or misspells the words
+-  Raise an error if user doesn't input anything or hits enter by mistake
+
+**To-do list**
+- Implement update feature to change user score
+- Implement a way to quit game and keep saved data in MongoDB
+
+# Getting Started
+Download VS Code
+Download Python extension
+Download MongoDB
+Download Pymongo extension
+
+![enter image description here](https://ucarecdn.com/067526a7-03d1-441b-8ea1-85aaca48638d/visualstudiodownload.png)
+
+
+
+# Usage
+![enter image description here](https://ucarecdn.com/8431b3c8-00f9-471c-a501-426d2049ca86/ScreenshotOfgame_played.png)
+
+
 
 
 
