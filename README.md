@@ -41,6 +41,12 @@ Download Pymongo extension
 
 
 # Usage
+
+- Below is a screenshot of the game being played, it displays how many games the user wants to play
+- Displays the user misspelling scissors and gives an error message
+- Displays the users choice and if he/she won 
+- Displays overall winner and points scored
+
 ![enter image description here](https://ucarecdn.com/8431b3c8-00f9-471c-a501-426d2049ca86/ScreenshotOfgame_played.png)
 
 
